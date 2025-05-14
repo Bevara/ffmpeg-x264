@@ -1,0 +1,17 @@
+{
+    "name": "ffmpeg-hevc",
+    "description": "ffmpeg hevc decoder",
+    "filters":["ffdec-hevc", "ffsws-hevc"],
+    "help": "This is a reduced version of ffmpeg adapted to decode hevc content.",
+    "support": [
+      "image",
+      "video"
+    ],
+    "sources":"https://codeload.github.com/Bevara/ffmpeg-hevc/zip/refs/heads/main",
+    "filter_source":{
+        "ffdec-hevc" : "ff_dec-hevc.c",
+        "ffsws-hevc" : "ff_rescale-hevc.c"
+    },
+    "licence_required":true,
+    "Format": ["HEVC"]
+}

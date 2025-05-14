@@ -6,7 +6,6 @@ include(filters.cmake)
 add_definitions(-fpic)
 
 SET(FF_SRC_x264
-        ${CMAKE_CURRENT_SOURCE_DIR}/ff_rescale-hevc.c
         ${CMAKE_CURRENT_SOURCE_DIR}/ff_enc-x264.c
         ${CMAKE_CURRENT_SOURCE_DIR}/ff_mx-x264.c
         ${CMAKE_CURRENT_SOURCE_DIR}/ff_common.c
@@ -16,8 +15,7 @@ SET(FF_LIB_x264
         ${CMAKE_CURRENT_SOURCE_DIR}/lib/libavcodec.a
         ${CMAKE_CURRENT_SOURCE_DIR}/lib/libavutil.a
         ${CMAKE_CURRENT_SOURCE_DIR}/lib/libavformat.a
-        ${CMAKE_CURRENT_SOURCE_DIR}/lib/libavfilter.a
-        ${CMAKE_CURRENT_SOURCE_DIR}/lib/libswscale.a
+        ${CMAKE_CURRENT_SOURCE_DIR}/lib/libx264.a
 )
 
 SET(FF_INCLUDE_x264

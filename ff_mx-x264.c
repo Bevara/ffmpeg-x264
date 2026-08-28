@@ -1588,3 +1588,9 @@ const GF_FilterRegister *dynCall_ffmx_register(GF_FilterSession *session)
 	return NULL;
 }
 #endif
+
+#include "filter_register.h"
+__attribute__((constructor))
+void register_ffmx(void) {
+    gf_filter_auto_register("ffmx_", dynCall_ffmx_register);
+}

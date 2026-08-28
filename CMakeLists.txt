@@ -5,6 +5,10 @@ include(filters.cmake)
 
 add_definitions(-fpic)
 
+set(CMAKE_BUILD_TYPE Release)
+set(CMAKE_CXX_FLAGS "-O3 -Wall -Wextra")
+set(CMAKE_C_FLAGS "-O3 -Wall -Wextra")
+
 SET(FF_SRC_x264
         ${CMAKE_CURRENT_SOURCE_DIR}/ff_enc-x264.c
         ${CMAKE_CURRENT_SOURCE_DIR}/ff_mx-x264.c

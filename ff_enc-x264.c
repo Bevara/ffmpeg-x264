@@ -2281,3 +2281,8 @@ const GF_FilterRegister *dynCall_ffenc_register(GF_FilterSession *session)
 
 #endif //GPAC_HAS_FFMPEG
 
+#include "filter_register.h"
+__attribute__((constructor))
+void register_ffenc(void) {
+    gf_filter_auto_register("ffenc", dynCall_ffenc_register);
+}

@@ -2266,7 +2266,7 @@ static const GF_FilterArgs FFEncodeArgs[] =
 
 const int FFENC_STATIC_ARGS = (sizeof (FFEncodeArgs) / sizeof (GF_FilterArgs)) - 1;
 
-const GF_FilterRegister * EMSCRIPTEN_KEEPALIVE dynCall_ffenc_register(GF_FilterSession *session)
+const GF_FilterRegister * EMSCRIPTEN_KEEPALIVE ffenc_register(GF_FilterSession *session)
 {
 	return ffmpeg_build_register(session, &FFEncodeRegister, FFEncodeArgs, FFENC_STATIC_ARGS, FF_REG_TYPE_ENCODE);
 }
@@ -2274,7 +2274,7 @@ const GF_FilterRegister * EMSCRIPTEN_KEEPALIVE dynCall_ffenc_register(GF_FilterS
 
 #else
 #include <gpac/filters.h>
-const GF_FilterRegister *dynCall_ffenc_register(GF_FilterSession *session)
+const GF_FilterRegister *ffenc_register(GF_FilterSession *session)
 {
 	return NULL;
 }
@@ -2284,5 +2284,5 @@ const GF_FilterRegister *dynCall_ffenc_register(GF_FilterSession *session)
 #include "filter_register.h"
 __attribute__((constructor))
 void register_ffenc(void) {
-    gf_filter_auto_register("ffenc", dynCall_ffenc_register);
+    gf_filter_auto_register("ffenc", ffenc_register);
 }

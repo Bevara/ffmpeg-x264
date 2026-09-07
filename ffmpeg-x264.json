@@ -1,17 +1,15 @@
 {
-    "name": "ffmpeg-hevc",
-    "description": "ffmpeg hevc decoder",
-    "filters":["ffdec-hevc", "ffsws-hevc"],
-    "help": "This is a reduced version of ffmpeg adapted to decode hevc content.",
+    "name": "ffmpeg-x264",
+    "description": "x264 encoder through the ffmpeg wrapper",
+    "filters":["ffenc"],
+    "help": "This is a reduced version of ffmpeg carrying the libx264 encoder only. It encodes raw video to H.264 through GPAC's generic ffmpeg encoder filter, and exists alongside libx264, which drives the same encoder directly.",
     "support": [
-      "image",
-      "video"
+        "video"
     ],
-    "sources":"https://codeload.github.com/Bevara/ffmpeg-hevc/zip/refs/heads/main",
+    "sources":"https://bevara.ddns.net/sources/ffmpeg-x264.accessor",
     "filter_source":{
-        "ffdec-hevc" : "ff_dec-hevc.c",
-        "ffsws-hevc" : "ff_rescale-hevc.c"
+        "ffenc" : "ff_enc-x264.c"
     },
-    "licence_required":true,
-    "Format": ["HEVC"]
+    "Format": ["AVC"],
+    "licence_required":true
 }

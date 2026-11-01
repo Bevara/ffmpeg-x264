@@ -11,7 +11,7 @@
         "ffenc" : "ff_enc-x264.c"
     },
     "Format": ["AVC"],
-    "using": ["solver_1"],
+    "using": ["mm_solver_1.0.1"],
     "patents": {
         "status": "licence-required",
         "note": "H.264/AVC encoding: Via LA",

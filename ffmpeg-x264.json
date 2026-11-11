@@ -1,17 +1,27 @@
 {
     "name": "ffmpeg-x264",
     "description": "x264 encoder through the ffmpeg wrapper",
-    "filters":["ffenc"],
+    "filters": [
+        "ffenc"
+    ],
     "help": "This is a reduced version of ffmpeg carrying the libx264 encoder only. It encodes raw video to H.264 through GPAC's generic ffmpeg encoder filter, and exists alongside libx264, which drives the same encoder directly.",
     "support": [
         "video"
     ],
-    "sources":"https://bevara.ddns.net/sources/ffmpeg-x264.accessor",
-    "filter_source":{
-        "ffenc" : "ff_enc-x264.c"
+    "sources": "https://bevara.ddns.net/sources/ffmpeg-x264.accessor",
+    "filter_source": {
+        "ffenc": "ff_enc-x264.c"
     },
-    "Format": ["AVC"],
-    "using": ["mm_solver_1.0.1", "mm_solver_1.0.2", "mm_solver_1.0.3", "mm_solver_1.0.4"],
+    "Format": [
+        "AVC"
+    ],
+    "using": [
+        "mm_solver_1.0.1",
+        "mm_solver_1.0.2",
+        "mm_solver_1.0.3",
+        "mm_solver_1.0.4",
+        "mm_solver_1.0.5"
+    ],
     "patents": {
         "status": "licence-required",
         "note": "H.264/AVC encoding: Via LA",
